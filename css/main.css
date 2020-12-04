@@ -429,7 +429,7 @@ img {
   background-position: center 25%, left top, right 105%;
   background-repeat: repeat-x;
   transition-property: all;
-  transition-duration: 2s;
+  transition-duration: 1s;
   transition-timing-function: ease;
 }
 
