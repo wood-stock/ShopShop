@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="base">
         <header class="header">
-            <nav class="header-nav">
+            <nav class="header-nav animate__animated animate__backInDown">
                 <button class="header-nav__close"><span></span></button>
                 <ul>
                     <li>идеи</li>
@@ -18,7 +19,8 @@
                     <li>контакты</li>
                 </ul>
             </nav>
-        <button class="menuButton header__menuButton"><span></span></button><a href="" class="basketIcon header__basketIcon"></a></header>
+            <div class="header__buttonsBlock animate__animated">
+        <button class="menuButton header__menuButton"><span></span></button><a href="" class="basketIcon header__basketIcon"></a></div></header>
         <main class="main">
             <header class="headBlockText">
                 <p>Надо крупно что-то написать про наш магазин.<br>
@@ -74,20 +76,21 @@
     mainHeader = document.querySelector('.header'),
     headerNavigation = document.querySelector('.header-nav'),
     openMenuButton = document.querySelector('.header__menuButton'),
-    basket = document.querySelector('.header__basketIcon');
+    buttonsBlock = document.querySelector('.header__buttonsBlock');
 openMenuButton.addEventListener('click', () => {
     mainHeader.classList.remove('header');
     mainHeader.classList.add('header_open');
     headerNavigation.style.display = 'block';
-    openMenuButton.classList.add('visually-hidden');
-    basket.classList.add('visually-hidden');
+    buttonsBlock.classList.add('visually-hidden');
+    buttonsBlock.classList.remove('animate__zoomIn');
 });
 closedMenuButton.addEventListener('click', () =>{
     mainHeader.classList.remove('header_open');
     mainHeader.classList.add('header');
     headerNavigation.style.display = 'none';
-    openMenuButton.classList.remove('visually-hidden');
-    basket.classList.remove('visually-hidden');
+    buttonsBlock.classList.remove('visually-hidden');
+    buttonsBlock.classList.add('animate__zoomIn');
+
 })
 </script>
 </body>
