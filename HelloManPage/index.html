@@ -6,10 +6,10 @@
   <title>Document</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     body {
       display: flex;
+      margin: 0;
       height: 100vh;
       justify-content: center;
       align-items: center;
@@ -86,22 +86,19 @@
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
       }
     }
-    .animate__animated {
-      animation-iteration-count: infinite;
-    }
     @media (max-width:575px) {
       body {
         background-color: #ff387a;
-        overflow: hidden;
+        overflow: auto;
         background-image: none;
       }
       .base {
         width: 100vw;
         height: 100vh;
-        background-position: center 150px, center 50px;
+        background-position: center 300px, center 10px;
       }
       .base__text {
-        margin-top: 290px;
+        margin-top: 120px;
       }
       .base__sender {
         padding-top: 30px;
@@ -113,7 +110,7 @@
 </head>
 <body>
   <div class="base">
-    <p class="base__text animate__animated animate__flash">ПОДПИСЫВАЙСЯ, ЧТОБЫ НЕ РЯБИЛО</p>
+    <p class="base__text">ПОДПИСЫВАЙСЯ, ЧТОБЫ НЕ РЯБИЛО</p>
     <form action="" method="post" class="base__sender">
       <input type="email" name="" id="" placeholder="example@yourmail.com" class="base__sender__mail shadow-pop-tl" />
       <input type="submit" value="" class="base__button rotate-center" />
@@ -126,8 +123,6 @@
     button.addEventListener("click", (event) => {
       event.preventDefault();
       event.target.remove();
-      text.classList.remove('animate__flash');
-      text.classList.add('animate__pulse');
       mail.remove();
       text.innerHTML =
         "ПОДПИСКА<br> ОФОРМЛЕНА!<br><br> ВСЕ ЕЩЕ РЯБИТ?<br> ЗНАЧИТ ДЕЛО<br> НЕ В ЭТОМ";
