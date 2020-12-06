@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: #00b3a4;
+      overflow: hidden;
+      background-image: url(bg.svg);
+      background-size: 842px 101px;
+      background-position: center;
+      background-repeat: repeat-x;
+    }
+    .base {
+      width: 320px;
+      height: 569px;
+      background-color: #ff387a;
+      margin: auto;
+      background-image: url(bg.svg), url(logo.svg);
+      background-size: 842px 101px, 110px 87px;
+      background-position: center center, center 76px;
+      background-repeat: repeat-x, no-repeat;
+    }
+    .base__text {
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      color: #ffffff;
+      margin: 360px 63px 0 63px;
+    }
+    .base__sender {
+      margin: 25px 10px 0 10px;
+    }
+    .base__sender__mail {
+      width: 300px;
+      height: 48px;
+      background: #ffffff;
+      border: 3px solid #00b3a4;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+    .base__button {
+      background-image: url(arrow.png);
+      background-repeat: no-repeat;
+      background-color: #ffffff;
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
+      border: none;
+      position: relative;
+      top: -32px;
+      left: 260px;
+      cursor: pointer;
+    }
+    .rotate-center:hover {
+      animation: rotate-center 0.6s ease-in-out both;
+    }
+    @keyframes rotate-center {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .shadow-pop-tl:hover {
+      animation: shadow-pop-tl 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+    @keyframes shadow-pop-tl {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+      100% {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+      }
+    }
+    .animate__animated {
+      animation-iteration-count: infinite;
+    }
+    @media (max-width:575px) {
+      body {
+        background-color: #ff387a;
+        overflow: hidden;
+        background-image: none;
+      }
+      .base {
+        width: 100vw;
+        height: 100vh;
+        background-position: center 150px, center 50px;
+      }
+      .base__text {
+        margin-top: 290px;
+      }
+      .base__sender {
+        padding-top: 30px;
+        width: 300px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="base">
+    <p class="base__text animate__animated animate__flash">ПОДПИСЫВАЙСЯ, ЧТОБЫ НЕ РЯБИЛО</p>
+    <form action="" method="post" class="base__sender">
+      <input type="email" name="" id="" placeholder="example@yourmail.com" class="base__sender__mail shadow-pop-tl" />
+      <input type="submit" value="" class="base__button rotate-center" />
+    </form>
+  </div>
+  <script>
+    let button = document.querySelector(".base__button"),
+      mail = document.querySelector(".base__sender__mail"),
+      text = document.querySelector(".base__text");
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.target.remove();
+      text.classList.remove('animate__flash');
+      text.classList.add('animate__pulse');
+      mail.remove();
+      text.innerHTML =
+        "ПОДПИСКА<br> ОФОРМЛЕНА!<br><br> ВСЕ ЕЩЕ РЯБИТ?<br> ЗНАЧИТ ДЕЛО<br> НЕ В ЭТОМ";
+    });
+  </script>
+</body>
+</html>
