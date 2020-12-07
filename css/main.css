@@ -410,7 +410,7 @@ gi
   background-position: center center, top center, center 120%;
   background-repeat: no-repeat;
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   transition-timing-function: ease;
 }
 
@@ -425,7 +425,7 @@ gi
   background-position: center 25%, left top, right 104%;
   background-repeat: repeat-x;
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   transition-timing-function: ease;
 }
 
@@ -614,14 +614,14 @@ gi
 
   .header {
     width: 100%;
-    transition-property: width, height;
+    transition-property: width, height, background-size;
   }
 
   .header_open {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
     background-position: center 25%, center top, center 104%;
-    transition-property: width, height;
+    transition-property: width, height, background-size;
   }
 
   .headBlockText {
