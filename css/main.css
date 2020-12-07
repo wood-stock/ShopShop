@@ -388,7 +388,6 @@ img {
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-gi
 .base {
   background: #ffcfec;
   background: -moz-linear-gradient(90deg, #ffcfec 5%, white 20%, white 80%, #bcfffb 95%);
@@ -607,8 +606,7 @@ gi
 }
 
 @media (max-width: 575px) {
-  gi
-.base {
+  .base {
     background: none;
   }
 
