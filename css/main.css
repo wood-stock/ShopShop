@@ -418,10 +418,10 @@ img {
   position: relative;
   background-color: #FF387A;
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   background-image: url(../img/logo.svg), url(../img/logoBlack.svg), url(../img/logoGreen.svg);
-  background-size: 332px;
-  background-position: center 25%, left top, right 104%;
+  background-size: 100%;
+  background-position: center 25%, left top, right 116%;
   background-repeat: repeat-x;
   transition-property: all;
   transition-duration: 0.5s;
@@ -453,8 +453,8 @@ img {
 .header-nav__close {
   background-color: transparent;
   border: none;
-  margin-top: 50px;
-  margin-bottom: 140px;
+  margin-top: 13vh;
+  margin-bottom: 26vh;
 }
 
 .header-nav__close span {
@@ -463,7 +463,7 @@ img {
   width: 14px;
   height: 14px;
   vertical-align: middle;
-  background-size: 100% 100%;
+  background-size: 100%;
 }
 
 .header-nav__close:focus {
@@ -618,6 +618,7 @@ img {
   .header_open {
     background-repeat: no-repeat;
     background-size: 100%;
+    height: 85vh;
     background-position: center 25%, center top, center 104%;
     transition-property: width, height, background-size;
   }
