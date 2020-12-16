@@ -20,14 +20,18 @@
                 </ul>
             </nav>
             <div class="header__buttonsBlock">
-        <button class="menuButton header__menuButton"><span></span></button><a href="" class="basketIcon header__basketIcon"></a></div></header>
+        <button class="menuButton header__menuButton"><span></span></button><a href="" class="basketIcon header__basketIcon"></a></div>
+    <!-- <div class="header__bg-half"></div> -->
+    </header>
         <main class="main">
-            <header class="headBlockText">
+            <div class="main__wrapper-bg-half"><div class="main__bg-half"></div></div>
+
+            <section class="headBlockText">
                 <div class="headBlockText__content">
                     <p>Надо крупно что-то написать про наш магазин.<br>
                 Ультимативно прям. Вот так и никак иначе!
                 В принципе эту надпись и можно оставить для начала.</p></div>
-            </header>
+            </section>
             <section class="listProducts">
 <div class="yearMonth">2020</div>
 <div class="yearMonth">май</div>
@@ -72,26 +76,6 @@
             <span class="copyRight">ИП ХАЦКО</span>
         </footer>
     </div>
-<script>
-    let closedMenuButton = document.querySelector('.header-nav__close'),
-    mainHeader = document.querySelector('.header'),
-    headerNavigation = document.querySelector('.header-nav'),
-    openMenuButton = document.querySelector('.header__menuButton'),
-    buttonsBlock = document.querySelector('.header__buttonsBlock');
-openMenuButton.addEventListener('click', () => {
-    mainHeader.classList.remove('header');
-    mainHeader.classList.add('header_open');
-    headerNavigation.style.display = 'block';
-    buttonsBlock.classList.add('visually-hidden');
-    buttonsBlock.classList.remove('animate__zoomIn');
-});
-closedMenuButton.addEventListener('click', () =>{
-    mainHeader.classList.remove('header_open');
-    mainHeader.classList.add('header');
-    headerNavigation.style.display = 'none';
-    buttonsBlock.classList.remove('visually-hidden');
-    buttonsBlock.classList.add('animate__zoomIn');
-})
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
