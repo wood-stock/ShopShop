@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body class="base">
         <header class="header">
@@ -24,9 +25,11 @@
     </header>
         <main class="main">
             <div class="main__wrapper-bg-half"><div class="main__bg-half"></div></div>
-            <section class="product ">
+            <div class="comebackButton"><a class='arter' href="#"></a></div>
+            <section class="product sticky">
                 <div class="product__presentation">
-                    <div class="product__properties">
+
+                    <div class="product__properties visually-hidden animate__fadeOut">
                         Буллитами отмечены свойства товара
                         <ul>
                             <li>материал</li>
@@ -37,9 +40,22 @@
                             <li>рост модели</li>
                         </ul>
                     </div>
-                    <div class="product__togleButton">Открыть/Закрыть</div>
+                    <div class="product__togleButton"><div class="icon-i">
+                        <div class="icon-i__round"><div class="icon-i__el1"></div>
+                        <div class="icon-i__el2"></div>
+                           <div class="icon-i__el3"></div></div>
+
+                      </div></div>
                     <div class="product__slider">
-                        <img src="http://placehold.it/320x350" />
+                        <div class="slider__arrows">
+                            <img src="img/icon/shevron.svg" class="slider__arrows_left" alt="">
+                            <img src="img/icon/shevron.svg" class="slider__arrows_right" alt="">
+                        </div>
+                        <div class="slider">
+                        <img src="https://imgholder.ru/320x350/pink/adb9ca.jpg&text=IMAGE+1&font=kelson" />
+                        <img src="https://imgholder.ru/320x350/pink/adb9ca.jpg&text=IMAGE+2&font=kelson" />
+                        <img src="https://imgholder.ru/320x350/pink/adb9ca.jpg&text=IMAGE+3&font=kelson" />
+                    </div>
                     </div>
                 </div>
                 <div class="product__number">
@@ -55,13 +71,24 @@
                     <span class="text">2500 руб.</span>
                     <span class="text text_green">S–XXL</span>
                 </div>
-                <div class="product__panelThree">
-                    <div class="product__color">
 
+                <div class="product__panelThree">
+                    <div class="product__color"><span>&#xe900;</span>
+                        <div class="select select_left visually-hidden" data-color>
+                            <div class="select__item" data-color="green"><div class="select__visualColor select__visualColor_green"></div>зеленый</div>
+                            <div class="select__item" data-color="white"><div class="select__visualColor select__visualColor_white"></div>белый</div>
+                            <div class="select__item" data-color="orange"><div class="select__visualColor select__visualColor_orange"></div>оранжевый</div>
+                            <div class="select__item" data-color="black"><div class="select__visualColor select__visualColor_black"></div>черный</div>
+                        </div>
                     </div>
                     <button class="product__buy">в корзину</button>
-                    <div class="product__size">
-
+                    <div class="product__size"><span>&#xe901;</span>
+<div class="select select_right visually-hidden" data-size>
+        <div class="select__item" data-size="S">S</div>
+        <div class="select__item" data-size="M">M</div>
+        <div class="select__item" data-size="L">L</div>
+        <div class="select__item" data-size="XL">XL</div>
+    </div>
                     </div>
                 </div>
             </section>
@@ -162,6 +189,9 @@
             <span class="copyRight">ИП ХАЦКО</span>
         </footer>
     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 <script src="js/script.js"></script>
+
+
 </body>
 </html>
