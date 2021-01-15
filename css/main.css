@@ -479,6 +479,10 @@ img {
   margin-bottom: 0px;
 }
 
+.select_bottom {
+  top: 65px;
+}
+
 .select__item {
   position: relative;
   background-color: #00B3A4;
@@ -498,6 +502,7 @@ img {
   width: 14px;
   height: 37px;
   border-radius: 3px;
+  border: 1px solid lightgray;
 }
 
 .select__visualColor_green {
@@ -528,7 +533,7 @@ img {
   background-color: #00B3A4;
   position: absolute;
   transform: rotate(56deg) skewX(20deg);
-  bottom: -4px;
+  bottom: -10px;
   left: 24px;
   border-radius: 2px;
 }
@@ -545,7 +550,7 @@ img {
   background-color: #00B3A4;
   position: absolute;
   transform: rotate(56deg) skewX(20deg);
-  bottom: -4px;
+  bottom: -10px;
   right: 24px;
   border-radius: 2px;
 }
@@ -607,6 +612,7 @@ img {
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+  z-index: 4;
 }
 
 .header-nav {
@@ -799,6 +805,11 @@ img {
   padding-bottom: 21px;
 }
 
+.product_sticky {
+  position: sticky;
+  top: -350px;
+}
+
 .product__presentation {
   height: 350px;
 }
@@ -872,7 +883,7 @@ img {
 
 .product__size {
   cursor: pointer;
-  font-family: 'icomoon';
+  font-family: "icomoon", "Roboto", sans-serif;
   font-size: 12px;
   line-height: 45px;
   text-align: center;
@@ -1082,11 +1093,6 @@ img {
   cursor: pointer;
 }
 
-.sticky {
-  position: sticky;
-  top: -350px;
-}
-
 .footer {
   margin: 0 auto;
   width: 320px;
@@ -1120,25 +1126,17 @@ img {
 }
 
 @media (max-width: 575px) {
-  .select__visualColor {
-    left: 5px;
-    top: 5px;
-    width: 27px;
-    height: 27px;
-    border-radius: 100%;
+  .select_bottom {
+    top: auto;
+    bottom: 65px;
   }
 
   .select_left:last-child::before {
-    display: none;
+    bottom: -6px;
   }
 
   .select_right:last-child::before {
-    display: none;
-  }
-
-  .select {
-    top: 60px;
-    left: 48px;
+    bottom: -6px;
   }
 
   .slider__arrows {
@@ -1153,10 +1151,6 @@ img {
     width: 100%;
   }
 
-  .header_open {
-    height: 85vh;
-  }
-
   .comebackButton {
     display: none;
   }
@@ -1166,8 +1160,16 @@ img {
     width: 100%;
   }
 
-  .sticky {
-    top: -425px;
+  .product_sticky {
+    position: relative;
+    top: 0;
+  }
+
+  .product__panelThree_fixed {
+    position: fixed;
+    bottom: 15px;
+    width: 320px;
+    z-index: 3;
   }
 
   .footer {

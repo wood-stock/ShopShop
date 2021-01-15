@@ -7,38 +7,58 @@ window.addEventListener('DOMContentLoaded', function() {
     openMenuButton = document.querySelector('.header__menuButton'),
     buttonsBlock = document.querySelector('.header__buttonsBlock'),
     bgHalf = document.querySelector('.main__wrapper-bg-half');
-openMenuButton.addEventListener('click', () => {
-    mainHeader.classList.remove('header');
-    mainHeader.classList.add('header_open');
-    headerNavigation.style.display = 'block';
-    buttonsBlock.classList.add('visually-hidden');
-    buttonsBlock.classList.remove('animate__zoomIn');
-    bgHalf.classList.add('visually-hidden');
-});
-closedMenuButton.addEventListener('click', () =>{
-    mainHeader.classList.remove('header_open');
-    mainHeader.classList.add('header');
-    headerNavigation.style.display = 'none';
-    buttonsBlock.classList.remove('visually-hidden');
-    buttonsBlock.classList.add('animate__zoomIn');
-    bgHalf.classList.remove('visually-hidden');
-});
-//плавная прокрутка
-const smoothLink = document.querySelector('.arter');
-smoothLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector('.base').scrollIntoView({
-        behavior: 'smooth',
-            block: 'start'
+    function openMenu() {
+        openMenuButton.addEventListener('click', () => {
+            mainHeader.classList.remove('header');
+            mainHeader.classList.add('header_open');
+            headerNavigation.style.display = 'block';
+            buttonsBlock.classList.add('visually-hidden');
+            buttonsBlock.classList.remove('animate__zoomIn');
+            bgHalf.classList.add('visually-hidden');
         });
-    });
+    }
+    openMenu();
+    function closeMenu(){
+        closedMenuButton.addEventListener('click', () =>{
+            mainHeader.classList.remove('header_open');
+            mainHeader.classList.add('header');
+            headerNavigation.style.display = 'none';
+            buttonsBlock.classList.remove('visually-hidden');
+            buttonsBlock.classList.add('animate__zoomIn');
+            bgHalf.classList.remove('visually-hidden');
+        });
+    }
+    closeMenu();
+
+//плавная прокрутка
+function backTop(){
+    const smoothLink = document.querySelector('.arter');
+    smoothLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.base').scrollIntoView({
+            behavior: 'smooth',
+                block: 'start'
+            });
+        });
+}
+backTop();
+
+//кнопка возврата
+function showBackButton(){
+    const comebackButton = document.querySelector('.comebackButton');
+    document.onscroll = function (){
+    if (window.pageYOffset > 100) {
+        comebackButton.classList.remove('visually-hidden');
+    } else { comebackButton.classList.add('visually-hidden'); }};
+}
+showBackButton();
 // анимация значка информации
 const iconInf = document.querySelector(".icon-i");
+
 function animationIconInfo(){
 const one = document.querySelector(".icon-i__el1"),
 two  = document.querySelector(".icon-i__el2"),
 three = document.querySelector(".icon-i__el3");
-
 iconInf.addEventListener('click', () => {
 iconInf.classList.toggle('icon-i_a');
 one.classList.toggle('icon-i__el1_a');
@@ -49,15 +69,14 @@ animationIconInfo();
 
 let productProperties = document.querySelector(".product__properties");
 
-    function openInfo(){
-        iconInf.addEventListener('click', () => {
-    productProperties.classList.toggle('animate__fadeOut');
-    productProperties.classList.add('animate__animated');
-    setTimeout(function ()
-{
-productProperties.classList.toggle('visually-hidden');
-productProperties.classList.toggle('animate__fadeIn');}, 300);
-});}
+function openInfo(){
+    iconInf.addEventListener('click', () => {
+        productProperties.classList.toggle('animate__fadeOut');
+        productProperties.classList.add('animate__animated');
+        setTimeout(function () {
+            productProperties.classList.toggle('visually-hidden');
+            productProperties.classList.toggle('animate__fadeIn');}, 300);
+            });}
 openInfo();
 
 // цвет размер
@@ -77,10 +96,14 @@ function choiceSizeColor(){
 }
 // отображение выбора цвета
 function fixedColor(color) {
-   const select__visualColor_color = document.querySelector(`[data-color='${color}']`);
-   select__visualColor_color.addEventListener('click', () =>{
+   const selectVisualColor = document.querySelector(`[data-color='${color}']`);
+   selectVisualColor.addEventListener('click', () =>{
     buttonColor.firstChild.remove();
-    buttonColor.insertAdjacentHTML("afterbegin", `<div style="width: 15px;height: 15px;border:1px solid grey;border-radius: 100%;background-color: ${color}; margin: 15px auto;"></div>`);
+    buttonColor.insertAdjacentHTML("afterbegin", `<div style="width: 15px;
+    height: 15px;
+    border:1px solid grey;border-radius: 100%;
+    background-color: ${color};
+    margin: 15px auto;"></div>`);
    });
 }
 // отображение выбора размера
@@ -91,19 +114,24 @@ function fixedSize(size) {
      buttonSize.insertAdjacentHTML("afterbegin", `<span style="text-align: center;
      font-family: "Roboto", sans-serif;
      font-size: 14px;
-     line-height: 43px; weight:700;">${size}</span>`);
+     line-height: 43px;
+     weight:700;">${size}</span>`);
     });
  }
- fixedSize('M');
- fixedSize('L');
- fixedSize('S');
- fixedSize('XL');
-
-fixedColor( 'green' );
-fixedColor( 'black' );
-fixedColor( 'orange' );
-fixedColor( 'white' );
+const sizes = document.querySelectorAll('[data-size]');
+sizes.forEach(function(item, i) {
+    if (i > 0){
+        return fixedSize(item.dataset.size);
+    }
+ });
+const colors = document.querySelectorAll('[data-color]');
+colors.forEach(function(item, i) {
+    if (i > 0){
+        return fixedColor(item.dataset.color);
+    }
+ });
 choiceSizeColor();
+// Слидер
 tns ({
     container: '.slider',
     navContainer: '.slideArrow',
