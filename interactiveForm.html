@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="wrapper" style="width: 320px; margin:50px auto; border: 1px solid black;">
+        <form action="" class="callBackForm">
+            <textarea class="callBackForm__inputName" name="test" id="test" cols="24" rows="1" placeholder="Привет! Меня зовут..."></textarea>
+            <button class="callBackForm__btn callBackForm__btn-name"></button>
+            <div class="callBackForm__wrapperMail">
+                <div class="callBackForm__wrapperInfo">
+                    <span>
+                    Мы уже получили ваше письмо, если хотите, чтобы мы на него ответили, то оставьте, пожалуйста, свою почту.
+                </span>
+
+                </div>
+                <input class="callBackForm__inputMail" type="email" name="maill" placeholder="example@mailbox.com" id="">
+                <button class="callBackForm__btn callBackForm__btn-mail" type="submit"></button>
+
+            </div>
+        </form>
+    </div>
+<script>
+    'use strict';
+    let btnShow = document.querySelector('.callBackForm__btn-name'),
+        btnSend = document.querySelector('.callBackForm__btn-mail'),
+        inputMessage = document.querySelector('.callBackForm__inputName'),
+        inputMail = document.querySelector('.callBackForm__inputMail'),
+        wrapperShow = document.querySelector('.callBackForm__wrapperMail'),
+        infoText = document.querySelector('.callBackForm__wrapperInfo');
+    btnShow.addEventListener('click', (e) => {
+        e.preventDefault();
+        inputMessage.classList.add('visually-hidden');
+        btnShow.classList.add('visually-hidden');
+        wrapperShow.classList.add('callBackForm__wrapperMail_show')});
+    btnSend.addEventListener('click', (e) => {
+        e.preventDefault();
+        inputMail.classList.add('visually-hidden');
+        btnSend.classList.add('visually-hidden');
+        infoText.textContent = 'Отлично! Теперь мы и почту вашу получили';});
+    (function() {
+  const txt = document.querySelector('textarea'),
+        fn = function() {
+        setTimeout(function() {
+          txt.style.height = 'auto';
+          txt.style.height = txt.scrollHeight + 'px';
+        }, 0);
+      };
+  txt.addEventListener('keydown', fn, false);
+})();
+</script>
+</body>
+</html>

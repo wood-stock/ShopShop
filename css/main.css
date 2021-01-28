@@ -574,6 +574,21 @@ img {
   transform: rotate(180deg);
 }
 
+.contacts {
+  padding: 18px 10px;
+}
+
+.contacts__h {
+  padding-bottom: 20px;
+}
+
+.contacts__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 35px;
+}
+
 .base {
   background: #ffcfec;
   background: -moz-linear-gradient(90deg, #ffcfec 5%, white 20%, white 80%, #bcfffb 95%);
@@ -696,6 +711,7 @@ img {
   display: flex;
   position: relative;
   justify-content: center;
+  z-index: 2;
 }
 
 .main__bg-half {
@@ -808,6 +824,7 @@ img {
 .product_sticky {
   position: sticky;
   top: -350px;
+  z-index: 1;
 }
 
 .product__presentation {
@@ -1066,9 +1083,78 @@ img {
   animation-duration: 0.5s;
 }
 
+.callBackForm {
+  padding: 0 10px;
+}
+
+.callBackForm__inputName {
+  min-height: 48px;
+  width: 300px;
+  border: 3px solid #FF387A;
+  border-radius: 3px;
+  padding: 8px 26px 8px 8px;
+  overflow: hidden;
+  resize: none;
+}
+
+.callBackForm__inputMail {
+  height: 48px;
+  width: 250px;
+  border: 3px solid #FF387A;
+  border-radius: 3px;
+  padding: 14px;
+  margin: 0 25px;
+}
+
+.callBackForm__wrapperMail {
+  width: 300px;
+  height: 150px;
+  background-color: #00B3A4;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background-image: url(../img/icon/inform.svg);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 268px 15px;
+  opacity: 0;
+}
+
+.callBackForm__wrapperMail_show {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.callBackForm__wrapperInfo {
+  width: 240px;
+  padding: 7px 8px 11px;
+}
+
+.callBackForm__btn {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/icon/arrow.svg);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: relative;
+}
+
+.callBackForm__btn-mail {
+  bottom: 32px;
+  left: 245px;
+}
+
+.callBackForm__btn-name {
+  bottom: 40px;
+  left: 270px;
+}
+
 .hello {
   position: relative;
-  z-index: -1;
 }
 
 .hello__text {

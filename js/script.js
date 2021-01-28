@@ -131,6 +131,8 @@ colors.forEach(function(item, i) {
     }
  });
 choiceSizeColor();
+
+
 // Слидер
 tns ({
     container: '.slider',
@@ -145,3 +147,33 @@ tns ({
   });
 
 });
+const callBackForm = () =>{
+    let btnShow = document.querySelector('.callBackForm__btn-name'),
+        btnSend = document.querySelector('.callBackForm__btn-mail'),
+        inputMessage = document.querySelector('.callBackForm__inputName'),
+        inputMail = document.querySelector('.callBackForm__inputMail'),
+        wrapperShow = document.querySelector('.callBackForm__wrapperMail'),
+        infoText = document.querySelector('.callBackForm__wrapperInfo');
+    btnShow.addEventListener('click', (e) => {
+        e.preventDefault();
+        inputMessage.classList.add('visually-hidden');
+        btnShow.classList.add('visually-hidden');
+        wrapperShow.classList.remove('visually-hidden');
+        wrapperShow.classList.add('callBackForm__wrapperMail_show')});
+    btnSend.addEventListener('click', (e) => {
+        e.preventDefault();
+        inputMail.classList.add('visually-hidden');
+        btnSend.classList.add('visually-hidden');
+        infoText.textContent = 'Отлично! Теперь мы и почту вашу получили';});
+    (function() {
+  const txt = document.querySelector('textarea'),
+        fn = function() {
+        setTimeout(function() {
+          txt.style.height = 'auto';
+          txt.style.height = txt.scrollHeight + 'px';
+        }, 0);
+      };
+  txt.addEventListener('keydown', fn, false);
+})();
+};
+callBackForm();
