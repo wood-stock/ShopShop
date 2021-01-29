@@ -59,24 +59,30 @@ function animationIconInfo(){
 const one = document.querySelector(".icon-i__el1"),
 two  = document.querySelector(".icon-i__el2"),
 three = document.querySelector(".icon-i__el3");
-iconInf.addEventListener('click', () => {
-iconInf.classList.toggle('icon-i_a');
-one.classList.toggle('icon-i__el1_a');
-two.classList.toggle('icon-i__el2_a');
-three.classList.toggle('icon-i__el3_a');
-});}
+if (one){
+    iconInf.addEventListener('click', () => {
+        iconInf.classList.toggle('icon-i_a');
+        one.classList.toggle('icon-i__el1_a');
+        two.classList.toggle('icon-i__el2_a');
+        three.classList.toggle('icon-i__el3_a');
+        })
+}
+;}
 animationIconInfo();
 
 let productProperties = document.querySelector(".product__properties");
-
 function openInfo(){
-    iconInf.addEventListener('click', () => {
-        productProperties.classList.toggle('animate__fadeOut');
-        productProperties.classList.add('animate__animated');
-        setTimeout(function () {
-            productProperties.classList.toggle('visually-hidden');
-            productProperties.classList.toggle('animate__fadeIn');}, 300);
-            });}
+    if (productProperties){
+        iconInf.addEventListener('click', () => {
+            productProperties.classList.toggle('animate__fadeOut');
+            productProperties.classList.add('animate__animated');
+            setTimeout(function () {
+                productProperties.classList.toggle('visually-hidden');
+                productProperties.classList.toggle('animate__fadeIn');}, 300);
+                })
+    }
+
+    ;}
 openInfo();
 
 // цвет размер
@@ -85,14 +91,18 @@ buttonColor = document.querySelector(".product__color");
 function choiceSizeColor(){
     let listSize = document.querySelector("[data-size]"),
     listColor = document.querySelector("[data-color]");
-    buttonSize.addEventListener('click', () =>{
-    listSize.classList.toggle('visually-hidden');
-    listColor.classList.add('visually-hidden');
-    });
-    buttonColor.addEventListener('click', () =>{
-        listColor.classList.toggle('visually-hidden');
-        listSize.classList.add('visually-hidden');
-    });
+    if(buttonSize){
+        buttonSize.addEventListener('click', () =>{
+            listSize.classList.toggle('visually-hidden');
+            listColor.classList.add('visually-hidden');
+            });
+    };
+    if(buttonColor){
+        buttonColor.addEventListener('click', () =>{
+            listColor.classList.toggle('visually-hidden');
+            listSize.classList.add('visually-hidden');
+        });
+    };
 }
 // отображение выбора цвета
 function fixedColor(color) {
@@ -131,9 +141,7 @@ colors.forEach(function(item, i) {
     }
  });
 choiceSizeColor();
-
-
-// Слидер
+// слидер
 tns ({
     container: '.slider',
     navContainer: '.slideArrow',
@@ -154,17 +162,21 @@ const callBackForm = () =>{
         inputMail = document.querySelector('.callBackForm__inputMail'),
         wrapperShow = document.querySelector('.callBackForm__wrapperMail'),
         infoText = document.querySelector('.callBackForm__wrapperInfo');
-    btnShow.addEventListener('click', (e) => {
-        e.preventDefault();
-        inputMessage.classList.add('visually-hidden');
-        btnShow.classList.add('visually-hidden');
-        wrapperShow.classList.remove('visually-hidden');
-        wrapperShow.classList.add('callBackForm__wrapperMail_show')});
-    btnSend.addEventListener('click', (e) => {
-        e.preventDefault();
-        inputMail.classList.add('visually-hidden');
-        btnSend.classList.add('visually-hidden');
-        infoText.textContent = 'Отлично! Теперь мы и почту вашу получили';});
+        if (btnShow){
+            btnShow.addEventListener('click', (e) => {
+                e.preventDefault();
+                inputMessage.classList.add('visually-hidden');
+                btnShow.classList.add('visually-hidden');
+                wrapperShow.classList.remove('visually-hidden');
+                wrapperShow.classList.add('callBackForm__wrapperMail_show')});
+        };
+        if (btnSend){
+            btnSend.addEventListener('click', (e) => {
+                e.preventDefault();
+                inputMail.classList.add('visually-hidden');
+                btnSend.classList.add('visually-hidden');
+                infoText.textContent = 'Отлично! Теперь мы и почту вашу получили';});
+        };
     (function() {
   const txt = document.querySelector('textarea'),
         fn = function() {
@@ -173,7 +185,9 @@ const callBackForm = () =>{
           txt.style.height = txt.scrollHeight + 'px';
         }, 0);
       };
-  txt.addEventListener('keydown', fn, false);
+      if(txt){
+        txt.addEventListener('keydown', fn, false);
+      };
 })();
 };
 callBackForm();
