@@ -579,7 +579,8 @@ img {
 }
 
 .contacts__h {
-  padding-bottom: 20px;
+  padding-bottom: 18px;
+  font-weight: 700;
 }
 
 .contacts__item {
@@ -587,6 +588,15 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 35px;
+}
+
+.diplom__h2 {
+  padding-top: 43px;
+  padding-bottom: 22px;
+}
+
+.diplom__img {
+  margin-bottom: 22px;
 }
 
 .base {
