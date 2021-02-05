@@ -438,6 +438,10 @@ img {
   color: #00B3A4;
 }
 
+.text_pink {
+  color: #FF387A;
+}
+
 .text_bold {
   font-weight: 700;
 }
@@ -461,6 +465,94 @@ img {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+.h2_bold {
+  font-weight: 700;
+}
+
+.button-close {
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/icon/close-black.svg);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background-size: 100%;
+}
+
+.btn-pay {
+  width: 304px;
+  height: 50px;
+  background: #F10693;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+}
+
+.radio {
+  position: relative;
+}
+
+.radio_input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.radio_label {
+  padding-left: 25px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.radio_label:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #FF387A;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2;
+  left: 0;
+  z-index: 1;
+  transition: border .1s linear;
+}
+
+.radio_label:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #FF387A;
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  z-index: 2;
+  transition: opacity .1s linear;
+}
+
+.radio_input:checked + .radio_label {
+  color: #FF387A;
+}
+
+.radio_input:checked + .radio_label:before {
+  border-color: #FF387A;
+}
+
+.radio_input:checked + .radio_label:after {
+  opacity: 1;
 }
 
 .select {
@@ -733,6 +825,12 @@ img {
   width: 190px;
   height: 10px;
   z-index: 1;
+}
+
+.centerWrapper {
+  width: 320px;
+  margin: 0 auto;
+  padding: 22px 8px;
 }
 
 .comebackButton {
@@ -1161,6 +1259,83 @@ img {
 .callBackForm__btn-name {
   bottom: 40px;
   left: 270px;
+}
+
+.basket {
+  margin-bottom: 93px;
+}
+
+.basket-product hr {
+  border: 1px solid #E5E5E5;
+  margin-top: 20px;
+}
+
+.basket-product__properties {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket-product__choise {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.basket-product__choise select {
+  width: 96px;
+  height: 30px;
+  background: #EEEEEE;
+  border-radius: 3px;
+  border-color: #EEEEEE;
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 10px;
+}
+
+.basket_price {
+  margin-top: 25px;
+}
+
+.pack_h2 {
+  padding-bottom: 15px;
+}
+
+.bb_h2 {
+  padding-bottom: 21px;
+}
+
+.radio_text {
+  padding-left: 25px;
+  color: #808080;
+  margin-bottom: 28px;
+}
+
+.radio_mb28 {
+  margin-bottom: 28px;
+}
+
+.btn-pay_pay {
+  margin: 28px 0 42px;
+}
+
+.heart {
+  width: 100%;
+  height: 130px;
+  background-image: url("../img/heart.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 38px;
+}
+
+.bb__text {
+  margin-top: 21px;
 }
 
 .hello {
